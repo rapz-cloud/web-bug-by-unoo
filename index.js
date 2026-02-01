@@ -99,12 +99,24 @@
             font-size: 20px;
             transition: all 0.3s ease;
             text-shadow: 0 0 5px var(--neon-pink);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            text-decoration: none;
         }
         
         .social-icon:hover {
             color: var(--neon-pink);
             transform: translateY(-3px);
             text-shadow: 0 0 10px var(--neon-pink);
+            background: rgba(255, 0, 255, 0.2);
+            border: 1px solid var(--neon-pink);
+            box-shadow: 0 0 15px var(--neon-pink);
         }
         
         .title-container {
@@ -258,8 +270,10 @@
         
         .qris-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             margin-top: 15px;
+            gap: 15px;
         }
         
         .qris-img {
@@ -267,6 +281,50 @@
             border-radius: 10px;
             border: 2px solid var(--neon-purple);
             box-shadow: 0 0 15px var(--neon-purple);
+        }
+        
+        /* Tombol Styling */
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 160px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-copy {
+            background: linear-gradient(45deg, #0066ff, #00ccff);
+            color: white;
+            border: 1px solid #00ccff;
+            box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        }
+        
+        .btn-copy:hover {
+            background: linear-gradient(45deg, #0055dd, #00aadd);
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.8);
+            transform: translateY(-3px);
+        }
+        
+        .btn-download {
+            background: linear-gradient(45deg, #ff00ff, #bd00ff);
+            color: white;
+            border: 1px solid #ff00ff;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+        
+        .btn-download:hover {
+            background: linear-gradient(45deg, #dd00dd, #aa00dd);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            transform: translateY(-3px);
         }
         
         .guide-container {
@@ -381,6 +439,26 @@
             animation-delay: -5s;
         }
         
+        /* Notifikasi salin */
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 255, 102, 0.9);
+            color: #000;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.7);
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 0.5s ease;
+        }
+        
+        .copy-notification.show {
+            transform: translateX(0);
+        }
+        
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 15px var(--neon-blue), 
@@ -440,6 +518,11 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .btn {
+                min-width: 140px;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
@@ -450,6 +533,11 @@
         <div class="glowing-circle circle-2"></div>
     </div>
     
+    <!-- Notifikasi salin -->
+    <div class="copy-notification" id="copyNotification">
+        <i class="fas fa-check-circle"></i> Nomor berhasil disalin!
+    </div>
+    
     <div class="container">
         <div class="profile-container">
             <div class="profile-frame">
@@ -457,9 +545,15 @@
             </div>
             
             <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.tiktok.com/@style.fomo34" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.instagram.com/rapz_yoaimo" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://t.me/rapzzxtamz" target="_blank" class="social-icon">
+                    <i class="fab fa-telegram"></i>
+                </a>
             </div>
         </div>
         
@@ -485,25 +579,39 @@
             <h2 class="section-title">METODE PEMBAYARAN</h2>
             
             <div class="payment-methods">
+                <!-- DANA -->
                 <div class="payment-card">
                     <h3 class="payment-title">DANA</h3>
                     <div class="payment-details">
-                        <div class="payment-info">0895-0790-7919</div> A/N AYU LESTARI
+                        <div class="payment-info">0895-0790-7919</div>
+                        <div>A/N AYU LESTARI</div>
+                        <button class="btn btn-copy" data-number="089507907919">
+                            <i class="fas fa-copy"></i> Salin Nomor
+                        </button>
                     </div>
                 </div>
                 
+                <!-- GOPAY -->
                 <div class="payment-card">
                     <h3 class="payment-title">GOPAY</h3>
                     <div class="payment-details">
-                        <div class="payment-info">0831-7229-9901</div> A/N RAPZ STORE
+                        <div class="payment-info">0831-7229-9901</div>
+                        <div>A/N RAPZ STORE</div>
+                        <button class="btn btn-copy" data-number="083172299901">
+                            <i class="fas fa-copy"></i> Salin Nomor
+                        </button>
                     </div>
                 </div>
                 
+                <!-- QRIS -->
                 <div class="payment-card">
                     <h3 class="payment-title">QRIS</h3>
                     <div class="payment-details">
                         <div class="qris-container">
                             <img src="https://files.catbox.moe/9ufaxv.jpg" alt="QRIS Payment" class="qris-img">
+                            <button class="btn btn-download" id="downloadQRIS">
+                                <i class="fas fa-download"></i> Download QR
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -588,6 +696,67 @@
         
         // Initial lightning
         createLightning();
+        
+        // Fungsi untuk menyalin nomor ke clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Tampilkan notifikasi
+                const notification = document.getElementById('copyNotification');
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }).catch(err => {
+                console.error('Gagal menyalin teks: ', err);
+                // Fallback untuk browser lama
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Tampilkan notifikasi
+                const notification = document.getElementById('copyNotification');
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            });
+        }
+        
+        // Tambahkan event listener untuk tombol salin
+        document.querySelectorAll('.btn-copy').forEach(button => {
+            button.addEventListener('click', function() {
+                const number = this.getAttribute('data-number');
+                copyToClipboard(number);
+            });
+        });
+        
+        // Fungsi untuk download gambar QRIS
+        document.getElementById('downloadQRIS').addEventListener('click', function() {
+            const qrImageUrl = 'https://files.catbox.moe/9ufaxv.jpg';
+            
+            // Buat elemen anchor untuk download
+            const link = document.createElement('a');
+            link.href = qrImageUrl;
+            link.download = 'QRIS_RAPZ_STORE.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Ubah sementara teks tombol
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i> QR Terdownload!';
+            this.style.background = 'linear-gradient(45deg, #00ff66, #00cc66)';
+            
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.style.background = 'linear-gradient(45deg, #ff00ff, #bd00ff)';
+            }, 2000);
+        });
     </script>
 </body>
 </html>
