@@ -1,16 +1,14 @@
-https://c.termai.cc/v198/onS.mp4
-https://c.termai.cc/i188/JIJcFB.jpg
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAPZ STORE PAYMENT</title>
+    <title>UNO PAYMENT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-        
-        :root {
+         :root {
             --neon-blue: #00f3ff;
             --neon-pink: #ff00ff;
             --neon-purple: #bd00ff;
@@ -31,10 +29,7 @@ https://c.termai.cc/i188/JIJcFB.jpg
             color: var(--text-color);
             min-height: 100vh;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(189, 0, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 70%, rgba(0, 243, 255, 0.1) 0%, transparent 20%),
-                linear-gradient(to bottom, #0a0a16, #000000);
+            background-image: radial-gradient(circle at 10% 20%, rgba(189, 0, 255, 0.1) 0%, transparent 20%), radial-gradient(circle at 90% 70%, rgba(0, 243, 255, 0.1) 0%, transparent 20%), linear-gradient(to bottom, #0a0a16, #000000);
             padding: 20px;
         }
         
@@ -44,9 +39,7 @@ https://c.termai.cc/i188/JIJcFB.jpg
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
             background-size: 30px 30px;
             z-index: -1;
             perspective: 500px;
@@ -75,8 +68,7 @@ https://c.termai.cc/i188/JIJcFB.jpg
             border-radius: 50%;
             border: 3px solid var(--neon-blue);
             padding: 5px;
-            box-shadow: 0 0 15px var(--neon-blue), 
-                        inset 0 0 15px var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-blue), inset 0 0 15px var(--neon-blue);
             animation: pulse 3s infinite alternate;
             overflow: hidden;
             position: relative;
@@ -182,7 +174,8 @@ https://c.termai.cc/i188/JIJcFB.jpg
             padding: 0 10px;
         }
         
-        .quote::before, .quote::after {
+        .quote::before,
+        .quote::after {
             content: '"';
             color: var(--neon-pink);
             font-size: 2rem;
@@ -284,8 +277,8 @@ https://c.termai.cc/i188/JIJcFB.jpg
             border: 2px solid var(--neon-purple);
             box-shadow: 0 0 15px var(--neon-purple);
         }
-        
         /* Tombol Styling */
+        
         .btn {
             padding: 12px 25px;
             border: none;
@@ -440,8 +433,8 @@ https://c.termai.cc/i188/JIJcFB.jpg
             background: radial-gradient(circle, var(--neon-blue), transparent);
             animation-delay: -5s;
         }
-        
         /* Notifikasi salin */
+        
         .copy-notification {
             position: fixed;
             top: 20px;
@@ -463,64 +456,64 @@ https://c.termai.cc/i188/JIJcFB.jpg
         
         @keyframes pulse {
             0% {
-                box-shadow: 0 0 15px var(--neon-blue), 
-                            inset 0 0 15px var(--neon-blue);
+                box-shadow: 0 0 15px var(--neon-blue), inset 0 0 15px var(--neon-blue);
             }
             100% {
-                box-shadow: 0 0 25px var(--neon-pink), 
-                            inset 0 0 25px var(--neon-pink);
+                box-shadow: 0 0 25px var(--neon-pink), inset 0 0 25px var(--neon-pink);
             }
         }
         
         @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 0 0 10px rgba(189, 0, 255, 0.5),
-                             0 0 20px rgba(189, 0, 255, 0.3),
-                             0 0 30px rgba(189, 0, 255, 0.2);
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                text-shadow: 0 0 10px rgba(189, 0, 255, 0.5), 0 0 20px rgba(189, 0, 255, 0.3), 0 0 30px rgba(189, 0, 255, 0.2);
             }
-            20%, 24%, 55% {
+            20%,
+            24%,
+            55% {
                 text-shadow: none;
             }
         }
         
         @keyframes float {
-            0%, 100% {
+            0%,
+            100% {
                 transform: translate(0, 0) scale(1);
             }
             50% {
                 transform: translate(20px, -20px) scale(1.2);
             }
         }
-        
         /* Responsiveness */
+        
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2.5rem;
             }
-            
             .payment-methods {
                 gap: 20px;
             }
-            
             .social-usernames {
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
             }
-            
             .quote {
                 font-size: 1.2rem;
             }
-            
             .section-title {
                 font-size: 1.7rem;
             }
-            
             .guide-step {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .btn {
                 min-width: 140px;
                 padding: 10px 20px;
@@ -528,29 +521,33 @@ https://c.termai.cc/i188/JIJcFB.jpg
         }
     </style>
 </head>
+
 <body>
+    <audio id="bgMusic" loop muted>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="cyberpunk-grid"></div>
     <div class="cyberpunk-elements">
         <div class="glowing-circle circle-1"></div>
         <div class="glowing-circle circle-2"></div>
     </div>
-    
-    <!-- Notifikasi salin -->
+
     <div class="copy-notification" id="copyNotification">
         <i class="fas fa-check-circle"></i> Nomor berhasil disalin!
     </div>
-    
+
     <div class="container">
         <div class="profile-container">
             <div class="profile-frame">
-                <img src="https://c.termai.cc/i69/4WfytR.jpg" alt="RAPZ Store" class="profile-img">
+                <img src="https://c.termai.cc/i188/JIJcFB.jpg" alt="14! Uno'o" class="profile-img">
             </div>
-            
+
             <div class="social-icons">
                 <a href="https://www.tiktok.com/@style.fomo34" target="_blank" class="social-icon">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://www.instagram.com/rapz_yoaimo" target="_blank" class="social-icon">
+                <a href="https://www.instagram.com/rapz.onee1" target="_blank" class="social-icon">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://t.me/rapzzxtamz" target="_blank" class="social-icon">
@@ -558,207 +555,194 @@ https://c.termai.cc/i188/JIJcFB.jpg
                 </a>
             </div>
         </div>
-        
+
         <div class="title-container">
-            <h1 class="main-title">RAPZ STORE PAYMENT</h1>
-            
-            <div class="social-usernames">
-                <div class="username">
-                    <i class="fab fa-tiktok"></i> @style.fomo34
-                </div>
-                <div class="username">
-                    <i class="fab fa-instagram"></i> @rapz_yoaimo
-                </div>
-                <div class="username">
-                    <i class="fab fa-telegram"></i> @rapzzxtamz
-                </div>
-            </div>
-        </div>
-        
-        <p class="quote">JANGAN BERFIKIR KAU DI ATAS KU.</p>
-        
-        <div class="payment-section">
-            <h2 class="section-title">METODE PEMBAYARAN</h2>
-            
-            <div class="payment-methods">
-                <!-- DANA -->
-                <div class="payment-card">
-                    <h3 class="payment-title">DANA</h3>
-                    <div class="payment-details">
-                        <div class="payment-info">0895-0790-7919</div>
-                        <div>A/N AYU LESTARI</div>
-                        <button class="btn btn-copy" data-number="089507907919">
-                            <i class="fas fa-copy"></i> Salin Nomor
+            <h1 class="main-title">UNO PAYMENT</h1>
+
+            <p class="quote">I've grown, what about you? Tsk, licking parasite.</p>
+
+            <div class="payment-section">
+                <h2 class="section-title">PAYMENT METHODS
+                    <h2>
+
+                        <div class="payment-methods">
+                            <!-- DANA -->
+                            <div class="payment-card">
+                                <h3 class="payment-title">DANA</h3>
+                                <div class="payment-details">
+                                    <div class="payment-info">0895-0790-7919</div>
+                                    <div>A/N AYU LESTARI</div>
+                                    <button class="btn btn-copy" data-number="089507907919">
+                            <i class="fas fa-copy"></i> Copy 
                         </button>
-                    </div>
-                </div>
-                
-                <!-- GOPAY -->
-                <div class="payment-card">
-                    <h3 class="payment-title">GOPAY</h3>
-                    <div class="payment-details">
-                        <div class="payment-info">0831-7229-9901</div>
-                        <div>A/N RAPZ STORE</div>
-                        <button class="btn btn-copy" data-number="083172299901">
-                            <i class="fas fa-copy"></i> Salin Nomor
+                                </div>
+                            </div>
+
+                            <!-- GOPAY -->
+                            <div class="payment-card">
+                                <h3 class="payment-title">GOPAY</h3>
+                                <div class="payment-details">
+                                    <div class="payment-info">0831-7229-9901</div>
+                                    <div>A/N RAPZ STORE</div>
+                                    <button class="btn btn-copy" data-number="083172299901">
+                            <i class="fas fa-copy"></i> Copy 
                         </button>
-                    </div>
-                </div>
-                
-                <!-- QRIS -->
-                <div class="payment-card">
-                    <h3 class="payment-title">QRIS</h3>
-                    <div class="payment-details">
-                        <div class="qris-container">
-                            <img src="https://files.catbox.moe/9ufaxv.jpg" alt="QRIS Payment" class="qris-img">
-                            <button class="btn btn-download" id="downloadQRIS">
+                                </div>
+                            </div <!-- QRIS -->
+                            <div class="payment-card">
+                                <h3 class="payment-title">QRIS</h3>
+                                <div class="payment-details">
+                                    <div class="qris-container">
+                                        <img src="https://c.termai.cc/i155/AXJZvl.jpg" alt="QRIS Payment" class="qris-img">
+                                        <button class="btn btn-download" id="downloadQRIS">
                                 <i class="fas fa-download"></i> Download QR
                             </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="guide-container">
-                <h3 class="guide-title">PANDUAN PEMBAYARAN</h3>
-                <div class="guide-steps">
-                    <div class="guide-step">
-                        Pilih metode pembayaran yang ingin Anda gunakan (DANA, GOPAY, atau QRIS)
-                    </div>
-                    <div class="guide-step">
-                        Transfer sesuai dengan jumlah pembayaran yang harus Anda bayarkan
-                    </div>
-                    <div class="guide-step">
-                        Simpan bukti transfer yang valid (screenshot atau foto)
-                    </div>
-                    <div class="guide-step">
-                        Kirim bukti transfer ke admin melalui WhatsApp atau media sosial yang tersedia
-                    </div>
-                    <div class="guide-step">
-                        Tunggu konfirmasi dari admin bahwa pembayaran Anda telah diterima
-                    </div>
-                </div>
-            </div>
-            
-            <div class="note-container">
-                <h3 class="note-title">PENTING!</h3>
-                <p class="note-text">JIKA TIDAK ADA BUKTI TRANSFER MAKA AKAN KU ANGGAP TIDAK ADA PEMBAYARAN.</p>
+
+                        <div class="guide-container">
+                            <h3 class="guide-title"></h3>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    Pilih metode pembayaran yang ingin Anda gunakan (DANA, GOPAY, atau QRIS)
+                                </div>
+                                <div class="guide-step">
+                                    Transfer sesuai dengan jumlah pembayaran yang harus Anda bayarkan
+                                </div>
+                                <div class="guide-step">
+                                    Simpan bukti transfer yang valid (screenshot atau foto)
+                                </div>
+                                <div class="guide-step">
+                                    Kirim bukti transfer ke admin melalui WhatsApp atau media sosial yang tersedia
+                                </div>
+                                <div class="guide-step">
+                                    Tunggu konfirmasi dari admin bahwa pembayaran Anda telah diterima
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="note-container">
+                            <h3 class="note-title">PENTING!</h3>
+                            <p class="note-text">JIKA TIDAK ADA BUKTI TRANSFER MAKA AKAN KU ANGGAP TIDAK ADA PEMBAYARAN.</p>
+                        </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        // Function to create lightning effects
-        function createLightning() {
-            const title = document.querySelector('.main-title');
-            const titleRect = title.getBoundingClientRect();
-            
-            for (let i = 0; i < 5; i++) {
-                const lightning = document.createElement('div');
-                lightning.classList.add('lightning');
-                
-                // Random position and size
-                const left = Math.random() * titleRect.width;
-                const height = 50 + Math.random() * 100;
-                const top = -height;
-                
-                lightning.style.left = `${left}px`;
-                lightning.style.top = `${top}px`;
-                lightning.style.height = `${height}px`;
-                
-                // Random color
-                const colors = ['#00f3ff', '#ff00ff', '#bd00ff'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                lightning.style.background = color;
-                lightning.style.boxShadow = `0 0 10px 2px ${color}`;
-                
-                document.querySelector('.title-container').appendChild(lightning);
-                
-                // Animate lightning
-                const delay = Math.random() * 5;
-                
-                setTimeout(() => {
-                    lightning.style.opacity = '1';
-                    lightning.style.transition = 'opacity 0.1s';
-                    
+        <script>
+            // Function to create lightning effects
+            function createLightning() {
+                const title = document.querySelector('.main-title');
+                const titleRect = title.getBoundingClientRect();
+
+                for (let i = 0; i < 5; i++) {
+                    const lightning = document.createElement('div');
+                    lightning.classList.add('lightning');
+
+                    // Random position and size
+                    const left = Math.random() * titleRect.width;
+                    const height = 50 + Math.random() * 100;
+                    const top = -height;
+
+                    lightning.style.left = `${left}px`;
+                    lightning.style.top = `${top}px`;
+                    lightning.style.height = `${height}px`;
+
+                    // Random color
+                    const colors = ['#00f3ff', '#ff00ff', '#bd00ff'];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    lightning.style.background = color;
+                    lightning.style.boxShadow = `0 0 10px 2px ${color}`;
+
+                    document.querySelector('.title-container').appendChild(lightning);
+
+                    // Animate lightning
+                    const delay = Math.random() * 5;
+
                     setTimeout(() => {
-                        lightning.style.opacity = '0';
-                        lightning.style.transition = 'opacity 0.5s';
-                        
+                        lightning.style.opacity = '1';
+                        lightning.style.transition = 'opacity 0.1s';
+
                         setTimeout(() => {
-                            lightning.remove();
-                        }, 500);
-                    }, 100);
-                }, delay * 1000);
+                            lightning.style.opacity = '0';
+                            lightning.style.transition = 'opacity 0.5s';
+
+                            setTimeout(() => {
+                                lightning.remove();
+                            }, 500);
+                        }, 100);
+                    }, delay * 1000);
+                }
             }
-        }
-        
-        // Create lightning effects periodically
-        setInterval(createLightning, 3000);
-        
-        // Initial lightning
-        createLightning();
-        
-        // Fungsi untuk menyalin nomor ke clipboard
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                // Tampilkan notifikasi
-                const notification = document.getElementById('copyNotification');
-                notification.classList.add('show');
-                
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000);
-            }).catch(err => {
-                console.error('Gagal menyalin teks: ', err);
-                // Fallback untuk browser lama
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                // Tampilkan notifikasi
-                const notification = document.getElementById('copyNotification');
-                notification.classList.add('show');
-                
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000);
+
+            // Create lightning effects periodically
+            setInterval(createLightning, 3000);
+
+            // Initial lightning
+            createLightning();
+
+            // Fungsi untuk menyalin nomor ke clipboard
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    // Tampilkan notifikasi
+                    const notification = document.getElementById('copyNotification');
+                    notification.classList.add('show');
+
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 3000);
+                }).catch(err => {
+                    console.error('Gagal menyalin teks: ', err);
+                    // Fallback untuk browser lama
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+
+                    // Tampilkan notifikasi
+                    const notification = document.getElementById('copyNotification');
+                    notification.classList.add('show');
+
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 3000);
+                });
+            }
+
+            // Tambahkan event listener untuk tombol salin
+            document.querySelectorAll('.btn-copy').forEach(button => {
+                button.addEventListener('click', function() {
+                    const number = this.getAttribute('data-number');
+                    copyToClipboard(number);
+                });
             });
-        }
-        
-        // Tambahkan event listener untuk tombol salin
-        document.querySelectorAll('.btn-copy').forEach(button => {
-            button.addEventListener('click', function() {
-                const number = this.getAttribute('data-number');
-                copyToClipboard(number);
+
+            // Fungsi untuk download gambar QRIS
+            document.getElementById('downloadQRIS').addEventListener('click', function() {
+                const qrImageUrl = 'https://files.catbox.moe/9ufaxv.jpg';
+
+                // Buat elemen anchor untuk download
+                const link = document.createElement('a');
+                link.href = qrImageUrl;
+                link.download = 'QRIS_RAPZ_STORE.jpg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Ubah sementara teks tombol
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> QR Terdownload!';
+                this.style.background = 'linear-gradient(45deg, #00ff66, #00cc66)';
+
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = 'linear-gradient(45deg, #ff00ff, #bd00ff)';
+                }, 2000);
             });
-        });
-        
-        // Fungsi untuk download gambar QRIS
-        document.getElementById('downloadQRIS').addEventListener('click', function() {
-            const qrImageUrl = 'https://files.catbox.moe/9ufaxv.jpg';
-            
-            // Buat elemen anchor untuk download
-            const link = document.createElement('a');
-            link.href = qrImageUrl;
-            link.download = 'QRIS_RAPZ_STORE.jpg';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Ubah sementara teks tombol
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-check"></i> QR Terdownload!';
-            this.style.background = 'linear-gradient(45deg, #00ff66, #00cc66)';
-            
-            setTimeout(() => {
-                this.innerHTML = originalText;
-                this.style.background = 'linear-gradient(45deg, #ff00ff, #bd00ff)';
-            }, 2000);
-        });
-    </script>
+        </script>
 </body>
+
 </html>
