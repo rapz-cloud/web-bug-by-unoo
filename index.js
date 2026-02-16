@@ -1,748 +1,435 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNO PAYMENT</title>
+    <title>TITLE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-         :root {
-            --neon-blue: #00f3ff;
-            --neon-pink: #ff00ff;
-            --neon-purple: #bd00ff;
-            --neon-green: #00ff66;
-            --dark-bg: #0a0a16;
-            --text-color: #ffffff;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: var(--dark-bg);
-            color: var(--text-color);
+            background-color: #0a0a0a;
+            color: #fff;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 50, 0, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 100, 255, 0.05) 0%, transparent 20%);
             min-height: 100vh;
+            line-height: 1.6;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 10% 20%, rgba(189, 0, 255, 0.1) 0%, transparent 20%), radial-gradient(circle at 90% 70%, rgba(0, 243, 255, 0.1) 0%, transparent 20%), linear-gradient(to bottom, #0a0a16, #000000);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
         
-        .cyberpunk-grid {
-            position: fixed;
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .header-bg {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background: linear-gradient(45deg, #ff3a00, #0a58ca, #ff3a00);
+            opacity: 0.1;
             z-index: -1;
-            perspective: 500px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .profile-frame {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--neon-blue);
-            padding: 5px;
-            box-shadow: 0 0 15px var(--neon-blue), inset 0 0 15px var(--neon-blue);
-            animation: pulse 3s infinite alternate;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .social-icon {
-            color: var(--text-color);
-            font-size: 20px;
-            transition: all 0.3s ease;
-            text-shadow: 0 0 5px var(--neon-pink);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 0, 255, 0.1);
-            border: 1px solid rgba(255, 0, 255, 0.3);
-            text-decoration: none;
-        }
-        
-        .social-icon:hover {
-            color: var(--neon-pink);
-            transform: translateY(-3px);
-            text-shadow: 0 0 10px var(--neon-pink);
-            background: rgba(255, 0, 255, 0.2);
-            border: 1px solid var(--neon-pink);
-            box-shadow: 0 0 15px var(--neon-pink);
-        }
-        
-        .title-container {
-            text-align: center;
-            margin: 20px 0;
-            position: relative;
         }
         
         .main-title {
-            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
             font-weight: 900;
-            font-size: 3.5rem;
             text-transform: uppercase;
+            letter-spacing: 3px;
             margin-bottom: 10px;
-            position: relative;
-            color: transparent;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-purple));
+            background: linear-gradient(to right, #ff3a00, #ffcc00, #0a58ca);
             -webkit-background-clip: text;
             background-clip: text;
-            text-shadow: 0 0 10px rgba(189, 0, 255, 0.5);
-            animation: flicker 5s infinite alternate;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 58, 0, 0.3);
         }
         
-        .lightning {
+        .subtitle {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .subtitle::after {
+            content: "";
             position: absolute;
-            width: 5px;
-            background: var(--neon-blue);
-            box-shadow: 0 0 10px 2px var(--neon-blue);
-            opacity: 0;
-            z-index: -1;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff3a00, #0a58ca, transparent);
         }
         
-        .social-usernames {
+        /* Jakarta Theme Elements */
+        .jakarta-elements {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 15px 0 30px;
             flex-wrap: wrap;
-        }
-        
-        .username {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1rem;
-            color: var(--neon-blue);
-        }
-        
-        .username i {
-            color: var(--neon-pink);
-        }
-        
-        .quote {
-            font-style: italic;
-            font-size: 1.5rem;
-            text-align: center;
-            margin: 20px 0 40px;
-            color: var(--neon-blue);
-            text-shadow: 0 0 5px var(--neon-blue);
-            position: relative;
-            padding: 0 10px;
-        }
-        
-        .quote::before,
-        .quote::after {
-            content: '"';
-            color: var(--neon-pink);
-            font-size: 2rem;
-        }
-        
-        .payment-section {
-            width: 100%;
+            gap: 20px;
             margin-bottom: 40px;
         }
         
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            color: var(--neon-green);
-            margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 0 0 10px var(--neon-green);
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
-        }
-        
-        .payment-methods {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .payment-card {
-            background: rgba(10, 10, 22, 0.8);
-            border: 1px solid var(--neon-blue);
+        .element {
+            background: rgba(20, 20, 30, 0.8);
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        
-        .payment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
-        }
-        
-        .payment-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: var(--neon-pink);
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 0 0 5px var(--neon-pink);
-        }
-        
-        .payment-details {
+            padding: 10px 20px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 58, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             display: flex;
-            flex-direction: column;
             align-items: center;
             gap: 10px;
         }
         
-        .payment-info {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 20px;
-            border-radius: 5px;
-            width: 100%;
-            text-align: center;
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            transition: all 0.3s ease;
+        .element i {
+            color: #ffcc00;
         }
         
-        .payment-info:hover {
-            background: rgba(0, 243, 255, 0.1);
-            border-color: var(--neon-blue);
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
         
-        .qris-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 15px;
-            gap: 15px;
-        }
-        
-        .qris-img {
-            max-width: 250px;
-            border-radius: 10px;
-            border: 2px solid var(--neon-purple);
-            box-shadow: 0 0 15px var(--neon-purple);
-        }
-        /* Tombol Styling */
-        
-        .btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            min-width: 160px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn-copy {
-            background: linear-gradient(45deg, #0066ff, #00ccff);
-            color: white;
-            border: 1px solid #00ccff;
-            box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
-        }
-        
-        .btn-copy:hover {
-            background: linear-gradient(45deg, #0055dd, #00aadd);
-            box-shadow: 0 0 15px rgba(0, 204, 255, 0.8);
-            transform: translateY(-3px);
-        }
-        
-        .btn-download {
-            background: linear-gradient(45deg, #ff00ff, #bd00ff);
-            color: white;
-            border: 1px solid #ff00ff;
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
-        }
-        
-        .btn-download:hover {
-            background: linear-gradient(45deg, #dd00dd, #aa00dd);
-            box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
-            transform: translateY(-3px);
-        }
-        
-        .guide-container {
-            background: rgba(10, 10, 22, 0.8);
-            border: 1px solid var(--neon-purple);
-            border-radius: 10px;
+        .card {
+            background: rgba(20, 20, 30, 0.9);
+            border-radius: 15px;
             padding: 25px;
-            margin-top: 30px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 20px rgba(189, 0, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 58, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
         
-        .guide-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: var(--neon-blue);
-            margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 0 0 5px var(--neon-blue);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 58, 0, 0.2);
         }
         
-        .guide-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            counter-reset: step-counter;
-        }
-        
-        .guide-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            border-left: 3px solid var(--neon-green);
-        }
-        
-        .guide-step::before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
-            background: var(--neon-green);
-            color: var(--dark-bg);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-            box-shadow: 0 0 10px var(--neon-green);
-        }
-        
-        .note-container {
-            background: rgba(255, 0, 0, 0.1);
-            border: 1px solid rgba(255, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-        }
-        
-        .note-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            color: #ff3366;
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 0 0 5px rgba(255, 51, 102, 0.7);
-        }
-        
-        .note-text {
-            color: #ff9999;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-        
-        .cyberpunk-elements {
-            position: fixed;
+        .card::before {
+            content: "";
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+            height: 5px;
+            background: linear-gradient(to right, #ff3a00, #ffcc00, #0a58ca);
         }
         
-        .glowing-circle {
-            position: absolute;
-            width: 200px;
-            height: 200px;
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title i {
+            font-size: 1.2rem;
+        }
+        
+        .person-list {
+            list-style-type: none;
+        }
+        
+        .person-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .person-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .person-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--neon-purple), transparent);
-            filter: blur(40px);
-            opacity: 0.2;
-            animation: float 15s infinite ease-in-out;
-        }
-        
-        .circle-1 {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .circle-2 {
-            bottom: 30%;
-            right: 15%;
-            background: radial-gradient(circle, var(--neon-blue), transparent);
-            animation-delay: -5s;
-        }
-        /* Notifikasi salin */
-        
-        .copy-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 255, 102, 0.9);
-            color: #000;
-            padding: 15px 20px;
-            border-radius: 8px;
+            background: linear-gradient(45deg, #ff3a00, #0a58ca);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.7);
-            z-index: 1000;
-            transform: translateX(150%);
-            transition: transform 0.5s ease;
+            color: white;
         }
         
-        .copy-notification.show {
-            transform: translateX(0);
+        .slot {
+            color: #ff3a00;
+            font-weight: 700;
         }
         
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 15px var(--neon-blue), inset 0 0 15px var(--neon-blue);
-            }
-            100% {
-                box-shadow: 0 0 25px var(--neon-pink), inset 0 0 25px var(--neon-pink);
-            }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 58, 0, 0.3);
+            margin-top: 40px;
+            background: rgba(10, 10, 15, 0.9);
+            border-radius: 15px 15px 0 0;
         }
         
-        @keyframes flicker {
-            0%,
-            19%,
-            21%,
-            23%,
-            25%,
-            54%,
-            56%,
-            100% {
-                text-shadow: 0 0 10px rgba(189, 0, 255, 0.5), 0 0 20px rgba(189, 0, 255, 0.3), 0 0 30px rgba(189, 0, 255, 0.2);
-            }
-            20%,
-            24%,
-            55% {
-                text-shadow: none;
-            }
+        .footer-text {
+            font-size: 1rem;
+            color: #aaa;
         }
         
-        @keyframes float {
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-            50% {
-                transform: translate(20px, -20px) scale(1.2);
-            }
+        .footer-highlight {
+            color: #ffcc00;
+            font-weight: 700;
         }
-        /* Responsiveness */
         
+        /* Responsive */
         @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .element {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .main-title {
                 font-size: 2.5rem;
             }
-            .payment-methods {
-                gap: 20px;
+            
+            .subtitle {
+                font-size: 1.5rem;
             }
-            .social-usernames {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
+            
+            .card {
+                padding: 20px;
             }
-            .quote {
-                font-size: 1.2rem;
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
-            .guide-step {
-                flex-direction: column;
-                text-align: center;
-            }
-            .btn {
-                min-width: 140px;
-                padding: 10px 20px;
-            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Decorative elements */
+        .street-sign {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #ff3a00;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            transform: rotate(15deg);
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .sign-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .sign-2 {
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(-15deg);
+            background: #0a58ca;
         }
     </style>
 </head>
-
 <body>
-    <audio id="bgMusic" loop muted>
-      <source src="music.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="cyberpunk-grid"></div>
-    <div class="cyberpunk-elements">
-        <div class="glowing-circle circle-1"></div>
-        <div class="glowing-circle circle-2"></div>
-    </div>
-
-    <div class="copy-notification" id="copyNotification">
-        <i class="fas fa-check-circle"></i> Nomor berhasil disalin!
-    </div>
-
     <div class="container">
-        <div class="profile-container">
-            <div class="profile-frame">
-                <img src="https://c.termai.cc/i188/JIJcFB.jpg" alt="14! Uno'o" class="profile-img">
+        <header>
+            <div class="header-bg"></div>
+            <h1 class="main-title fade-in">TITLE</h1>
+            <div class="subtitle fade-in">𝐀𝐒𝐓𝐀𝐑 𝐀𝐍𝐃𝐑𝐘𝐗</div>
+            
+            <div class="jakarta-elements fade-in">
+                <div class="element"><i class="fas fa-city"></i> Jakarta Street Culture</div>
+                <div class="element"><i class="fas fa-music"></i> Urban Vibes</div>
+                <div class="element"><i class="fas fa-users"></i> Community</div>
             </div>
-
-            <div class="social-icons">
-                <a href="https://www.tiktok.com/@style.fomo34" target="_blank" class="social-icon">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://www.instagram.com/rapz.onee1" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://t.me/rapzzxtamz" target="_blank" class="social-icon">
-                    <i class="fab fa-telegram"></i>
-                </a>
+        </header>
+        
+        <div class="content-grid">
+            <!-- Owner Card -->
+            <div class="card fade-in">
+                <h2 class="card-title"><i class="fas fa-crown"></i> OWNERS</h2>
+                <ul class="person-list">
+                    <li>
+                        <div class="person-icon">B</div>
+                        <div>OWNER BOYS : <span class="slot">𝐑𝐚𝐩𝐳𝐗𝐲𝐳</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">G</div>
+                        <div>OWNER GIRLS : <span>NOVA</span></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Admin Card -->
+            <div class="card fade-in">
+                <h2 class="card-title"><i class="fas fa-user-shield"></i> ADMIN TEAM</h2>
+                <ul class="person-list">
+                    <li>
+                        <div class="person-icon">A</div>
+                        <div>ADMIN UTAMA : <span class="slot">𝐓𝐀𝐀</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">S1</div>
+                        <div>STAF ADMIN 1 : <span class="slot">𝐓𝐈𝐊𝐀</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">S2</div>
+                        <div>STAF ADMIN 2 : <span class="slot">𝐑𝐀𝐙𝐙</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">S3</div>
+                        <div>STAF ADMIN 3 : <span class="slot">𝐏𝐔𝐓𝐑𝐈</span></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Petinggi Card -->
+            <div class="card fade-in">
+                <h2 class="card-title"><i class="fas fa-star"></i> PETINGGI</h2>
+                <ul class="person-list">
+                    <li>
+                        <div class="person-icon">PB</div>
+                        <div>PETINGGI BOYS : <span class="slot">𝐒𝐋𝐎𝐓 -𝟏</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">PB</div>
+                        <div>PETINGGI BOYS : <span class="slot">𝐒𝐋𝐎𝐓 -𝟏</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">PG</div>
+                        <div>PETINGGI GIRLS : <span>𝐒𝐘𝐈𝐅𝐀</span></div>
+                    </li>
+                    <li>
+                        <div class="person-icon">PG</div>
+                        <div>PETINGGI GIRLS : <span class="slot">𝐒𝐋𝐎𝐓 -𝟏</span></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Editor Card -->
+            <div class="card fade-in">
+                <h2 class="card-title"><i class="fas fa-edit"></i> EDITOR</h2>
+                <ul class="person-list">
+                    <li>
+                        <div class="person-icon">E</div>
+                        <div>EDITOR : <span class="slot">𝐒𝐋𝐎𝐓 -𝟏</span></div>
+                    </li>
+                </ul>
+                <div style="margin-top: 30px; padding: 15px; background: rgba(255, 58, 0, 0.1); border-radius: 10px; border-left: 4px solid #ffcc00;">
+                    <p style="font-style: italic; color: #ffcc00;">
+                        <i class="fas fa-quote-left"></i> Komunitas anak muda Jakarta dengan semangat urban dan kreativitas tanpa batas.
+                    </p>
+                </div>
             </div>
         </div>
-
-        <div class="title-container">
-            <h1 class="main-title">UNO PAYMENT</h1>
-
-            <p class="quote">I've grown, what about you? Tsk, licking parasite.</p>
-
-            <div class="payment-section">
-                <h2 class="section-title">PAYMENT METHODS
-                    <h2>
-
-                        <div class="payment-methods">
-                            <!-- DANA -->
-                            <div class="payment-card">
-                                <h3 class="payment-title">DANA</h3>
-                                <div class="payment-details">
-                                    <div class="payment-info">0895-0790-7919</div>
-                                    <div>A/N AYU LESTARI</div>
-                                    <button class="btn btn-copy" data-number="089507907919">
-                            <i class="fas fa-copy"></i> Copy 
-                        </button>
-                                </div>
-                            </div>
-
-                            <!-- GOPAY -->
-                            <div class="payment-card">
-                                <h3 class="payment-title">GOPAY</h3>
-                                <div class="payment-details">
-                                    <div class="payment-info">0831-7229-9901</div>
-                                    <div>A/N RAPZ STORE</div>
-                                    <button class="btn btn-copy" data-number="083172299901">
-                            <i class="fas fa-copy"></i> Copy 
-                        </button>
-                                </div>
-                            </div <!-- QRIS -->
-                            <div class="payment-card">
-                                <h3 class="payment-title">QRIS</h3>
-                                <div class="payment-details">
-                                    <div class="qris-container">
-                                        <img src="https://c.termai.cc/i155/AXJZvl.jpg" alt="QRIS Payment" class="qris-img">
-                                        <button class="btn btn-download" id="downloadQRIS">
-                                <i class="fas fa-download"></i> Download QR
-                            </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="guide-container">
-                            <h3 class="guide-title"></h3>
-                            <div class="guide-steps">
-                                <div class="guide-step">
-                                    Pilih metode pembayaran yang ingin Anda gunakan (DANA, GOPAY, atau QRIS)
-                                </div>
-                                <div class="guide-step">
-                                    Transfer sesuai dengan jumlah pembayaran yang harus Anda bayarkan
-                                </div>
-                                <div class="guide-step">
-                                    Simpan bukti transfer yang valid (screenshot atau foto)
-                                </div>
-                                <div class="guide-step">
-                                    Kirim bukti transfer ke admin melalui WhatsApp atau media sosial yang tersedia
-                                </div>
-                                <div class="guide-step">
-                                    Tunggu konfirmasi dari admin bahwa pembayaran Anda telah diterima
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="note-container">
-                            <h3 class="note-title">PENTING!</h3>
-                            <p class="note-text">JIKA TIDAK ADA BUKTI TRANSFER MAKA AKAN KU ANGGAP TIDAK ADA PEMBAYARAN.</p>
-                        </div>
-            </div>
-        </div>
-
-        <script>
-            // Function to create lightning effects
-            function createLightning() {
-                const title = document.querySelector('.main-title');
-                const titleRect = title.getBoundingClientRect();
-
-                for (let i = 0; i < 5; i++) {
-                    const lightning = document.createElement('div');
-                    lightning.classList.add('lightning');
-
-                    // Random position and size
-                    const left = Math.random() * titleRect.width;
-                    const height = 50 + Math.random() * 100;
-                    const top = -height;
-
-                    lightning.style.left = `${left}px`;
-                    lightning.style.top = `${top}px`;
-                    lightning.style.height = `${height}px`;
-
-                    // Random color
-                    const colors = ['#00f3ff', '#ff00ff', '#bd00ff'];
-                    const color = colors[Math.floor(Math.random() * colors.length)];
-                    lightning.style.background = color;
-                    lightning.style.boxShadow = `0 0 10px 2px ${color}`;
-
-                    document.querySelector('.title-container').appendChild(lightning);
-
-                    // Animate lightning
-                    const delay = Math.random() * 5;
-
-                    setTimeout(() => {
-                        lightning.style.opacity = '1';
-                        lightning.style.transition = 'opacity 0.1s';
-
-                        setTimeout(() => {
-                            lightning.style.opacity = '0';
-                            lightning.style.transition = 'opacity 0.5s';
-
-                            setTimeout(() => {
-                                lightning.remove();
-                            }, 500);
-                        }, 100);
-                    }, delay * 1000);
-                }
-            }
-
-            // Create lightning effects periodically
-            setInterval(createLightning, 3000);
-
-            // Initial lightning
-            createLightning();
-
-            // Fungsi untuk menyalin nomor ke clipboard
-            function copyToClipboard(text) {
-                navigator.clipboard.writeText(text).then(() => {
-                    // Tampilkan notifikasi
-                    const notification = document.getElementById('copyNotification');
-                    notification.classList.add('show');
-
-                    setTimeout(() => {
-                        notification.classList.remove('show');
-                    }, 3000);
-                }).catch(err => {
-                    console.error('Gagal menyalin teks: ', err);
-                    // Fallback untuk browser lama
-                    const textArea = document.createElement('textarea');
-                    textArea.value = text;
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textArea);
-
-                    // Tampilkan notifikasi
-                    const notification = document.getElementById('copyNotification');
-                    notification.classList.add('show');
-
-                    setTimeout(() => {
-                        notification.classList.remove('show');
-                    }, 3000);
+        
+        <footer class="fade-in">
+            <p class="footer-text">
+                ASTAR ANDRYX - Komunitas Urban Jakarta <span class="footer-highlight">© 2024</span>
+            </p>
+            <p class="footer-text" style="margin-top: 10px;">
+                Tema: Anak Jalanan Modern - Kekinian tapi tetap menjaga identitas asli Jakarta
+            </p>
+        </footer>
+    </div>
+    
+    <!-- Decorative street signs -->
+    <div class="street-sign sign-1">JKT</div>
+    <div class="street-sign sign-2">ASX</div>
+    
+    <script>
+        // Add fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
                 });
-            }
-
-            // Tambahkan event listener untuk tombol salin
-            document.querySelectorAll('.btn-copy').forEach(button => {
-                button.addEventListener('click', function() {
-                    const number = this.getAttribute('data-number');
-                    copyToClipboard(number);
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+            
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.person-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.person-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1)';
+                    }
                 });
             });
-
-            // Fungsi untuk download gambar QRIS
-            document.getElementById('downloadQRIS').addEventListener('click', function() {
-                const qrImageUrl = 'https://files.catbox.moe/9ufaxv.jpg';
-
-                // Buat elemen anchor untuk download
-                const link = document.createElement('a');
-                link.href = qrImageUrl;
-                link.download = 'QRIS_RAPZ_STORE.jpg';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                // Ubah sementara teks tombol
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-check"></i> QR Terdownload!';
-                this.style.background = 'linear-gradient(45deg, #00ff66, #00cc66)';
-
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.style.background = 'linear-gradient(45deg, #ff00ff, #bd00ff)';
-                }, 2000);
-            });
-        </script>
+        });
+    </script>
 </body>
-
 </html>
